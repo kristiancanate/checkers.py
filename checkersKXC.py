@@ -6,6 +6,16 @@ def create_tile(tR, tC):
     global sqSz
     tL = Rectangle(Point(sqSz * (tR + 1), sqSz * (tC + 1)),
                    Point(sqSz * (tR + 2), sqSz * (tC + 2)))
+    if tC % 2 == 0: #even
+        if tR % 2 == 0: #even
+            tL.setFill("red")
+        else: #odd
+            tL.setFill("black")
+    else: #odd
+        if tR % 2 == 1: #odd
+            tL.setFill("red")
+        else: #even
+            tL.setFill("black")
     tL.draw(chWin)
 
 chWin = GraphWin("Checkers", sqSz * 10, sqSz * 10) #Draws window
