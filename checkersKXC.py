@@ -1,6 +1,14 @@
 from graphics import *
 
-sqSz = 50 #Defines size of squares
+print("""Please input how big you would like the square sizes to be.
+Your input must only contain whole numbers and should not contain
+any extra characters such as spaces or punctuation. If you'd prefer
+a nice standard size, it will be drawn with a square size of 50.
+Recommended size range is from 10-100.""")
+try:
+    sqSz = int(input("Square Sizes: ")) #Defines size of squares
+except ValueError:
+    sqSz = 50
 
 def create_tile(tR, tC, color):
     global sqSz
@@ -10,11 +18,12 @@ def create_tile(tR, tC, color):
     tL.draw(chWin)
 
 print("""Please input what colors you would like the checkerboard to be.
-If you'd like a standard red & black board, simply leave the input empty
-by hitting return:""")
-uC1 = input()
+Your input must be all lowercase and should not contain any extra characters
+such as spaces or punctuation. If you'd like a standard red & black board,
+simply leave the input empty by hitting return:""")
+uC1 = input("Color 1: ")
 if uC1 != "":
-    uC2 = input()
+    uC2 = input("Color 2: ")
 else:
     uC1 = "red"
     uC2 = "black"
